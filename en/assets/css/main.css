@@ -3326,7 +3326,7 @@ input, select, textarea {
    ================================ */
 body.homepage > #page-wrapper > #header {
   /* Pfad zum Bild im GitHub-Pages-Kontext */
-  background-image: url("/2.0/images/4.jpg") !important;  
+  background-image: url("../../images/4.jpg") !important;  
   background-size: cover !important;
   background-position: center 40% !important;
   background-attachment: fixed !important;
