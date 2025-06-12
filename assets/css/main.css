@@ -3342,10 +3342,12 @@ body.homepage #header:after {
   background: none !important;
   opacity: 0 !important;
 }*/
-/* Hero-Bild: Overlay-Pseudo-Elemente komplett ausknipsen */
-#header::before,
-#header::after {
+
+/* ——— Hero Overlay abschalten ——— */
+body.homepage #header:before,
+body.homepage #header:after {
   display: none !important;
+  background: none !important;
 }
 
 
