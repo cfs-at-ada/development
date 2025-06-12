@@ -3337,18 +3337,5 @@ input, select, textarea {
 		
 	}
 
-/* Overlay komplett ausknipsen 
-body.homepage #header:after {
-  background: none !important;
-  opacity: 0 !important;
-}*/
-
-/* ——— Hero Overlay abschalten ——— */
-body.homepage #header:before,
-body.homepage #header:after {
-  display: none !important;
-  background: none !important;
-}
-
 
 
