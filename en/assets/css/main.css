@@ -3320,3 +3320,25 @@ input, select, textarea {
 .header-button:hover {
   background-color: #0056b3;
 }
+
+/* ================================
+   Hero-Override nur auf der Homepage
+   ================================ */
+body.homepage > #page-wrapper > #header {
+  /* Pfad zum Bild im GitHub-Pages-Kontext */
+  background-image: url("/2.0/images/4.jpg") !important;  
+  background-size: cover !important;
+  background-position: center 40% !important;
+  background-attachment: fixed !important;
+  padding: 7.5em 0 2em 0 !important;             /* wie im Original */
+}
+
+/* Dunkles Overlay nach dem Preload ausschalten */
+body.homepage > #page-wrapper > #header:after {
+  display: none !important;
+}
+
+/* Inneren <header id="header"> (duplizierte ID) vom Hintergrund befreien */
+body.homepage > #page-wrapper > #header > header#header {
+  background: none !important;
+}
