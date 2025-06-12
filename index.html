@@ -12,6 +12,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!--<style>
+			body.homepage #header::after,
+			body.homepage #header::before {
+			/* entfernt das dunkle Pseudo-Element */
+			content: none !important;
+			/* oder alternativ opacity auf 0 setzen:
+			opacity: 0 !important; */
+			}
+		</style>-->
+		<style>
+			body.homepage #header::before,
+			body.homepage #header::after {
+			display: none !important;
+			background: none !important;
+			}
+		</style>
 	</head>
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
