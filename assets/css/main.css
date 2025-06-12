@@ -2182,7 +2182,7 @@ input, select, textarea {
 	#header {
 		
 		position: relative;
-		background-image: url("/2.0/images/4.jpg");
+		background-image: url("../../images/4.jpg") !important;
 		background-size: cover;
 		background-position: center 40%;
 		background-attachment: fixed;
@@ -3337,6 +3337,16 @@ input, select, textarea {
 		
 	}
 
-	
+/* Overlay komplett ausknipsen 
+body.homepage #header:after {
+  background: none !important;
+  opacity: 0 !important;
+}*/
+/* Hero-Bild: Overlay-Pseudo-Elemente komplett ausknipsen */
+#header::before,
+#header::after {
+  display: none !important;
+}
+
 
 
