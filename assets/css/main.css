@@ -3201,7 +3201,7 @@ input, select, textarea {
    Hero Section (#intro): Bild nicht oben abschneiden
    ======================================== */
 #intro {
-	background-image: url("images/4.jpg");
+	background-image: url("../../images/4.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center top;
