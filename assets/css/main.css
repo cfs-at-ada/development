@@ -2182,7 +2182,7 @@ input, select, textarea {
 	#header {
 		
 		position: relative;
-		background-image: url("../../images/4.jpg");
+		background-image: url("/2.0/images/4.jpg");
 		background-size: cover;
 		background-position: center 40%;
 		background-attachment: fixed;
@@ -3201,7 +3201,7 @@ input, select, textarea {
    Hero Section (#intro): Bild nicht oben abschneiden
    ======================================== */
 #intro {
-	background-image: url("../../images/4.jpg");
+	background-image: url("../../images/4.jpg") ;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center top;
@@ -3324,7 +3324,7 @@ input, select, textarea {
 
 
 .Lehre-page #header {
-		background-image: url('images/4.jpg');
+		background-image: url('../../images/4.jpg');
 	    background-size:  cover;
 		background-position: center -700px;
 	}
