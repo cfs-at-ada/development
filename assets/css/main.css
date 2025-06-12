@@ -2263,7 +2263,8 @@ input, select, textarea {
 		}
 
 		body.homepage #header:after {
-			content: '';
+			opacity: 0 !important;
+			/*content: '';
 			background: #1C0920;
 			display: block;
 			position: absolute;
@@ -2279,11 +2280,12 @@ input, select, textarea {
 			-moz-transition-delay: 0.5s;
 			-webkit-transition-delay: 0.5s;
 			-ms-transition-delay: 0.5s;
-			transition-delay: 0.5s;
+			transition-delay: 0.5s;*/
+
 		}
 
 	body.homepage.is-preload #header:after {
-		opacity: 1;
+		opacity: none !important;
 	}
 
 /* ===========================
@@ -3337,5 +3339,24 @@ input, select, textarea {
 		
 	}
 
+/* ================================
+   Hero-Override nur auf der Homepage
+   ================================ */
+body.homepage > #page-wrapper > #header {
+  /* Pfad zum Bild im GitHub-Pages-Kontext */
+  background-image: url("/2.0/images/4.jpg") !important;  
+  background-size: cover !important;
+  background-position: center 40% !important;
+  background-attachment: fixed !important;
+  padding: 7.5em 0 2em 0 !important;             /* wie im Original */
+}
 
+/* Dunkles Overlay nach dem Preload ausschalten */
+body.homepage > #page-wrapper > #header:after {
+  display: none !important;
+}
 
+/* Inneren <header id="header"> (duplizierte ID) vom Hintergrund befreien */
+body.homepage > #page-wrapper > #header > header#header {
+  background: none !important;
+}
