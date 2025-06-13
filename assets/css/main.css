@@ -3405,3 +3405,66 @@ img {
   }
 
 }
+/* ==============================================
+   Mobile-Hamburger + Name-Anpassung (≤ 767 px)
+   ============================================== */
+@media screen and (max-width: 767px) {
+
+  /* 1) Name etwas tiefer und kleiner */
+  .hero-name {
+    top: 70% !important;            /* statt 20 % bzw. 60 % */
+    transform: translate(50%, -20%) !important;
+    font-size: 5vw !important;      /* statt 6 vw */ 
+  }
+
+  /* 2) Navigation wieder einblenden */
+  /* Standard-CSS versteckt #nav global */ 
+  /* (global: #nav { display: none; }) */  
+  /* :contentReference[oaicite:0]{index=0} */
+  #nav {
+    display: block !important;
+    position: relative !important;
+  }
+
+  /* 3) Hamburger-Icon als Pseudo-Element */
+  #nav::before {
+    content: '\f0c9';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 2em;
+    display: block;
+    text-align: right;
+    padding: 0.8em 1em;
+    cursor: pointer;
+  }
+
+  /* 4) Menü zunächst verbergen */
+  #nav > ul {
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.85);
+    padding: 1em 0;
+  }
+
+  /* 5) Menü bei “Hover” anzeigen */
+  /* Greift auch beim Touch: tippe auf Icon, hält den Hover-Zustand */
+  #nav:hover > ul {
+    display: block !important;
+  }
+
+  /* 6) Menüeinträge untereinander und lesbar */
+  #nav > ul > li {
+    display: block !important;
+    margin: 0.5em 0 !important;
+  }
+  #nav > ul > li > a {
+    display: block;
+    padding: 0.5em 1em;
+    color: #fff;
+    text-decoration: none;
+  }
+
+}
