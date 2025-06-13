@@ -3476,7 +3476,7 @@ img {
 @media screen and (max-width: 599px) {
   .hero-name {
     top: 35% !important;  /* statt 20% */
-    transform: translate(50%, -10%) !important; /* optional Feintuning */
+    transform: translate(50%, -100%) !important; /* optional Feintuning */
   }
 }
 
