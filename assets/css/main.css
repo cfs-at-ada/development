@@ -3360,3 +3360,48 @@ body.homepage > #page-wrapper > #header:after {
 body.homepage > #page-wrapper > #header > header#header {
   background: none !important;
 }
+
+/* ----------------------------------
+   1. Bilder skalieren auf max. 100 %
+----------------------------------*/
+img {
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* ----------------------------------
+   2. Auf Tablets & kleinen Bildschirmen
+      jede .col-4-Spalte 100 % breit
+----------------------------------*/
+@media screen and (max-width: 840px) {
+  .wrapper.style1 .row > .col-4 {
+    width: 100% !important;
+    margin-bottom: 2em;
+  }
+  /* b) Leeren Spacer verbergen */
+  .wrapper.style1 #features .row > div.col-4.col-12-mobile {
+    display: none !important;
+  }
+}
+
+/* ==============================================
+   Mobile-Only Fixes (bis 736 px Breite)
+   ============================================== */
+@media screen and (max-width: 736px) {
+
+  /* 1) Navigationsleiste einblenden (override display:none) */
+  #nav {
+    display: block !important; /* Basis-CSS hatte #nav {display: none;} :contentReference[oaicite:0]{index=0} */
+  }
+
+  /* 2) Header-Hintergrund für Mobile optimieren */
+  body.homepage > #page-wrapper > #header {
+    background-attachment: scroll !important;      /* kein fixed mehr */
+    background-position: center top   !important;  /* Bild oben zentrieren */
+    background-size: cover          !important;    /* Bild immer ganz zeigen */
+    /* Optional: Höhe etwas verkleinern */
+    padding: 4em 0 1em  !important;
+  }
+
+}
