@@ -227,13 +227,29 @@
 					</div>
 	
 	<script>
-		// Helios-Mobile Panel nachladen
-		(function() {
-			var t = document.createElement('script');
-			t.src = 'https://cfs-at-ada.github.io/2.0/assets/js/main.js';
-			document.body.appendChild(t);
-			})();
+		(function($) {
+			// 1) Nav-Button (Hamburger) erzeugen
+			$('<div id="navButton"><a href="#navPanel" class="toggle"></a></div>')
+				.appendTo($('body'));
+
+			// 2) Nav-Panel erzeugen und Inhalte aus #nav kopieren
+			$('<div id="navPanel"><nav>' + $('#nav').html() + '</nav></div>')
+				.appendTo($('body'));
+
+			// 3) Panel-Plugin aufrufen
+			$('#navPanel').panel({
+				delay: 500,
+				hideOnClick: true,
+				hideOnSwipe: true,
+				resetScroll: true,
+				resetForms: true,
+				side: 'top',
+				target: $('body'),
+				visibleClass: 'navPanel-visible'
+		});
+		})(jQuery);
 	</script>
+
 
 
 	</body>
