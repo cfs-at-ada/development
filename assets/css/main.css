@@ -3361,122 +3361,33 @@ body.homepage > #page-wrapper > #header > header#header {
   background: none !important;
 }
 
-/* ----------------------------------
-   1. Bilder skalieren auf max. 100 %
-----------------------------------*/
+/* Globale responsive Bilder */
 img {
-  width: auto !important;
-  max-width: 100% !important;
-  height: auto !important;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
-
-/* ----------------------------------
-   2. Auf Tablets & kleinen Bildschirmen
-      jede .col-4-Spalte 100 % breit
-----------------------------------*/
-@media screen and (max-width: 840px) {
-  .wrapper.style1 .row > .col-4 {
-    width: 100% !important;
-    margin-bottom: 2em;
-  }
-  /* b) Leeren Spacer verbergen */
-  .wrapper.style1 #features .row > div.col-4.col-12-mobile {
-    display: none !important;
-  }
-}
-
-/* ==============================================
-   Mobile-Only Fixes (bis 736 px Breite)
-   ============================================== */
-@media screen and (max-width: 736px) {
-
-  /* 1) Navigationsleiste einblenden (override display:none) */
-  #nav {
-    display: block !important; /* Basis-CSS hatte #nav {display: none;} :contentReference[oaicite:0]{index=0} */
-  }
-
-  /* 2) Header-Hintergrund für Mobile optimieren */
-  body.homepage > #page-wrapper > #header {
-    background-attachment: scroll !important;      /* kein fixed mehr */
-    background-position: center top   !important;  /* Bild oben zentrieren */
-    background-size: cover          !important;    /* Bild immer ganz zeigen */
-    /* Optional: Höhe etwas verkleinern */
-    padding: 4em 0 1em  !important;
-  }
-
-}
-/* —————————————
-   1) Mobile-Override: Helios Inline-Nav
-   ————————————— */
-@media screen and (max-width: 767px) {
-  /* Stelle sicher, dass kein altes Panel- oder TitleBar-CSS stört */
-  #navPanel,
-  #titleBar {
-    display: none !important;
-  }
-
-  /* Zeige das <nav id="nav"> oben zentriert an */
-  #nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: 1.5em 0;
-    z-index: 1000;
-  }
-
-  /* Helios-Original: Liste inline darstellen */
-  #nav > ul {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    height: 21px;
-    line-height: 0; /* geringerer Zeilenabstand */
-  }
-
-  /* Jeden Menüpunkt als Button aussehen lassen */
-  #nav > ul > li {
-    display: inline-block;
-    margin: -9px 0.5em 0 0.5em;
-    padding: 0.85em;
-    border-radius: 0.5em;
-    border: solid 1px transparent;
-    transition: color 0.35s ease-in-out, border-color 0.35s ease-in-out;
-  }
-
-  #nav > ul > li.active {
-    border-color: rgba(192, 192, 192, 0.35);
-  }
-
-  #nav > ul > li > a {
+/* Bilder nicht floaten auf Mobilgeräten */
+@media only screen and (max-width: 736px) {
+  .image.left,
+  .image.right {
+    float: none !important;
+    margin: 1em auto;      /* zentriert das Bild */
     display: block;
-    text-align: center;
-    text-decoration: none;
-    color: inherit;
+    width: auto !important;
+  }
+  .image.left img,
+  .image.right img {
+    width: 100% !important;
+    height: auto !important;
   }
 }
-/* :contentReference[oaicite:6]{index=6} */
-
-/* ——————————————————————————————
-   2) Hero-Name weiter nach unten (Y-Achse)
-   —————————————————————————————— */
-/* Bereits vorhandene Regeln findest du hier:
-   .hero-name { … font-size: 3vw; top: 40%; … } :contentReference[oaicite:7]{index=7}
-   und unterkleiner Bildschirme hier:
-   @media (max-width: 599px) { top: 20%; … } :contentReference[oaicite:8]{index=8}
-*/
-@media screen and (max-width: 1023px) {
-  .hero-name {
-    top: 65% !important;  /* statt 60% */
-  }
+/* Bilder fest bei max. 400px, aber immer responsiv */
+.image.left img,
+.image.right img {
+  width: 100%;       /* nutzt volle Containerbreite */
+  max-width: 400px;  /* aber nie mehr als 400px */
+  height: auto;      /* behält das Seitenverhältnis */
+  display: block;    /* zentriert sich bei auto-margin */
+  margin: 0 auto;    /* optional: zentriert das Bild */
 }
-
-@media screen and (max-width: 599px) {
-  .hero-name {
-    top: 35% !important;  /* statt 20% */
-    transform: translate(100%, -300%) !important; /* optional Feintuning */
-  }
-}
-
