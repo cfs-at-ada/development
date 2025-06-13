@@ -3391,3 +3391,20 @@ img {
   display: block;    /* zentriert sich bei auto-margin */
   margin: 0 auto;    /* optional: zentriert das Bild */
 }
+
+/* 1) Bilder auf max. 400 px beschränken, bleiben aber responsiv */
+.image.left img,
+.image.right img {
+  width: 100%;       /* schrumpft mit dem Container */
+  max-width: 400px;  /* aber nie breiter als 400 px */
+  height: auto;      /* Seitenverhältnis beibehalten */
+  display: block;    
+  margin: 0 auto;    /* zentriert auf großen Screens */
+}
+
+/* 2) Header-Hintergrund komplett anzeigen (nicht nur gezoomt) */
+#header {
+  background-size: contain !important;      /* ganze Grafik sichtbar */
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
