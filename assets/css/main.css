@@ -3405,72 +3405,78 @@ img {
   }
 
 }
-/* ==============================================
-   Mobile-Only Anpassungen (≤ 767 px)
-   ============================================== */
+/* —————————————
+   1) Mobile-Override: Helios Inline-Nav
+   ————————————— */
 @media screen and (max-width: 767px) {
-
-  /* 1) Hero-Name: nur die Schriftgröße, Position/Transform bleibt wie im Original */
-  .hero-name {
-    font-size: 5vw !important;
-    /* top & transform kommen automatisch vom Original-CSS (20%/translate(50%,0)) */
-  }
-
-  /* 2) Navigation einblenden */
-  #nav {
-    display: block !important;
-    position: relative !important;
-  }
-
-  /* 3) Pseudo-Element als Hamburger-Icon */
-  #nav::before {
-    content: '\f0c9';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    font-size: 2em;
-    display: block;
-    text-align: right;
-    padding: 0.8em 1em;
-    cursor: pointer;
-    user-select: none;
-  }
-
-  /* 4) Menü zunächst verstecken */
-  #nav > ul {
+  /* Stelle sicher, dass kein altes Panel- oder TitleBar-CSS stört */
+  #navPanel,
+  #titleBar {
     display: none !important;
+  }
+
+  /* Zeige das <nav id="nav"> oben zentriert an */
+  #nav {
     position: absolute;
-    top: 100%;
+    top: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    padding: 1em 0;
+    text-align: center;
+    padding: 1.5em 0;
+    z-index: 1000;
+  }
+
+  /* Helios-Original: Liste inline darstellen */
+  #nav > ul {
+    display: inline-block;
     margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 21px;
+    line-height: 0; /* geringerer Zeilenabstand */
   }
 
-  /* 5) Menü bei Hover oder Active (Tap-&-Hold) sichtbar machen */
-  #nav:hover > ul,
-  #nav:active > ul {
-    display: block !important;
-  }
-
-  /* 6) Menüeinträge untereinander */
+  /* Jeden Menüpunkt als Button aussehen lassen */
   #nav > ul > li {
-    display: block !important;
-    margin: 0.5em 0 !important;
+    display: inline-block;
+    margin: -9px 0.5em 0 0.5em;
+    padding: 0.85em;
+    border-radius: 0.5em;
+    border: solid 1px transparent;
+    transition: color 0.35s ease-in-out, border-color 0.35s ease-in-out;
   }
+
+  #nav > ul > li.active {
+    border-color: rgba(192, 192, 192, 0.35);
+  }
+
   #nav > ul > li > a {
     display: block;
-    padding: 0.5em 1em;
-    color: #fff;
+    text-align: center;
     text-decoration: none;
+    color: inherit;
   }
+}
+/* :contentReference[oaicite:6]{index=6} */
 
+/* ——————————————————————————————
+   2) Hero-Name weiter nach unten (Y-Achse)
+   —————————————————————————————— */
+/* Bereits vorhandene Regeln findest du hier:
+   .hero-name { … font-size: 3vw; top: 40%; … } :contentReference[oaicite:7]{index=7}
+   und unterkleiner Bildschirme hier:
+   @media (max-width: 599px) { top: 20%; … } :contentReference[oaicite:8]{index=8}
+*/
+@media screen and (max-width: 1023px) {
+  .hero-name {
+    top: 65% !important;  /* statt 60% */
+  }
 }
 
-    display: block;
-    padding: 0.5em 1em;
-    color: #fff;
-    text-decoration: none;
+@media screen and (max-width: 599px) {
+  .hero-name {
+    top: 35% !important;  /* statt 20% */
+    transform: translate(50%, -10%) !important; /* optional Feintuning */
   }
-
 }
+
